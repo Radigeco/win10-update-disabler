@@ -62,7 +62,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ProcessCreator.cs" />
+    <Compile Include="MessageDialog.xaml.cs">
+      <DependentUpon>MessageDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UpdateService.cs" />
+    <Page Include="MessageDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UpdateController.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

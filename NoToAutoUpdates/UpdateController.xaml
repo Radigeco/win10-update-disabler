@@ -13,7 +13,8 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="Update Control" Height="362.448" Width="464.225">
+        Title="Update Control" Height="362.448" Width="464.225"
+        ResizeMode="NoResize">
     <Grid>
 
         <Grid VerticalAlignment="Stretch" >
@@ -70,6 +71,7 @@
             </Border>
             <Button Content="Disable" x:Name="Disable" Grid.Column="1" HorizontalAlignment="Left" Margin="23,134,0,0" Grid.Row="1" VerticalAlignment="Top" Width="85" Click="Disable_Click" />
             <Button Content="Enable" x:Name="Enable" Grid.Column="1" HorizontalAlignment="Left" Margin="144,134,0,0" Grid.Row="1" VerticalAlignment="Top" Width="85" Click="Enable_Click" />
+
         </Grid>
     </Grid>
 </Window>
