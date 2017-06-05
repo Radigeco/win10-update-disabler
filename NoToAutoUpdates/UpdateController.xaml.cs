@@ -24,5 +24,35 @@ namespace NoToAutoUpdates
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void GitHubButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TwitterButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ChatButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EmailButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

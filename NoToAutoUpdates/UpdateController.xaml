@@ -13,16 +13,64 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="Update Control" Height="350" Width="525">
+        Title="Update Control" Height="362.448" Width="464.225">
     <Grid>
-        <ProgressBar  HorizontalAlignment="Left" Height="10" Margin="0,274,0,0" VerticalAlignment="Top" Width="517" Grid.Row="1" Grid.ColumnSpan="2"/>
-        <Image HorizontalAlignment="Left" Height="319" VerticalAlignment="Top" Width="290" Grid.RowSpan="2" Source="resources/updater.png"/>
-        <TextBlock TextWrapping="Wrap" Foreground="{DynamicResource MaterialDesignBodyLight}"
-                   VerticalAlignment="Center" Height="101" Margin="298,61,8,157" Text="This is a small tool which helps you disable the nasty intrusive Windows 10 auto-updates"/>
 
-        <TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}" Margin="309,10,12,275">Control your PC</TextBlock>
-        <ToggleButton Style="{DynamicResource MaterialDesignSwitchToggleButton}" Content="" HorizontalAlignment="Left" Margin="340,200,0,0" VerticalAlignment="Top" Width="125"/>
+        <Grid VerticalAlignment="Stretch" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Source="Resources/updater.png" Grid.RowSpan="5" StretchDirection="Both" VerticalAlignment="Stretch" Stretch="UniformToFill" />
+            <TextBlock Grid.Column="1" Style="{StaticResource MaterialDesignHeadlineTextBlock}" Margin="16 16 16 2">Control your PC</TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Margin="16 0 16 8" Foreground="{DynamicResource MaterialDesignBodyLight}"
+                           VerticalAlignment="Center">This tool helps you disable the nasty auto-updates build into Windows 10. To disable, just click the "Disable" button, if it does not work, run the application as administrator.</TextBlock>
 
-
+            <Border Grid.Column="1" Grid.Row="2" BorderThickness="0 1 0 0" BorderBrush="{DynamicResource MaterialDesignDivider}" Margin="0 8 0 0">
+                <Grid Margin="8">
+                    <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Left"
+                                x:Name="GitHubButton" Click="GitHubButton_Click" >
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="GithubCircle" />
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">GitHub</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Right"
+                                x:Name="TwitterButton" Click="TwitterButton_Click" >
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Linkedin" />
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">LinkedIn</TextBlock>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+            <Border Grid.Column="1" Grid.Row="3" BorderThickness="0 1 0 0" BorderBrush="{DynamicResource MaterialDesignDivider}">
+                <Grid Margin="8">
+                    <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Left"
+                                x:Name="ChatButton" VerticalAlignment="Bottom" Click="ChatButton_Click" >
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Message" />
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Chat</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Right"
+                                x:Name="EmailButton" Margin="0,0,1,0" Click="EmailButton_Click" >
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Email" />
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Email</TextBlock>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+            <Button Content="Disable" Grid.Column="1" HorizontalAlignment="Left" Margin="23,134,0,0" Grid.Row="1" VerticalAlignment="Top" Width="85" Click="Button_Click_1"/>
+            <Button Content="Enable" Grid.Column="1" HorizontalAlignment="Left" Margin="144,134,0,0" Grid.Row="1" VerticalAlignment="Top" Width="85" Click="Button_Click"/>
+        </Grid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="643,215,-290,0" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>
