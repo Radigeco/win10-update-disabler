@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace NoToAutoUpdates
+namespace UpdateControl
 {
     /// <summary>
     /// Interaction logic for SampleMessageDialog.xaml

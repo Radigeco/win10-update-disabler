@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace NoToAutoUpdates
+namespace UpdateControl
 {
     public class UpdateService
     {

@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace NoToAutoUpdates
+namespace UpdateControl
 {
     public class ProcessCreator
     {

@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics;
 using System.Windows;
-using System.Windows.Controls.Primitives;
 using MaterialDesignThemes.Wpf;
+using NoToAutoUpdates;
 
-namespace NoToAutoUpdates
+namespace UpdateControl
 {
     /// <summary>
     /// Interaction logic for UpdateController.xaml
