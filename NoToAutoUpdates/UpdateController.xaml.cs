@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.Windows;
 using System.Windows.Controls.Primitives;
 using MaterialDesignThemes.Wpf;
 
@@ -16,22 +17,22 @@ namespace NoToAutoUpdates
 
         private void GitHubButton_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void TwitterButton_Click(object sender, RoutedEventArgs e)
-        {
-
+            Process.Start("https://github.com/Radigeco");
         }
 
         private void ChatButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Process.Start("https://twitter.com/radigeco");
         }
 
         private void EmailButton_Click(object sender, RoutedEventArgs e)
         {
+            Process.Start("mailto://radigeco@gmail.com");
+        }
 
+        private void LinkedinButton_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://www.linkedin.com/in/attila-g%C3%A1l-5b6b86b0/");
         }
 
         private void Disable_Click(object sender, RoutedEventArgs e)
@@ -59,5 +60,7 @@ namespace NoToAutoUpdates
 
             DialogHost.Show(messageDialog);
         }
+
+ 
     }
 }

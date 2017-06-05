@@ -7,13 +7,13 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NoToAutoUpdates")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Windows 10 Update Disabler")]
+[assembly: AssemblyDescription("This small tool helps you disable windows 10 updates, does not delete or modify any system files.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("NoToAutoUpdates")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("Attila Gál")]
+[assembly: AssemblyProduct("Windows 10 Update Disabler")]
+[assembly: AssemblyCopyright("Attila Gál ©  2017")]
+[assembly: AssemblyTrademark("Attila Gál")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -53,3 +53,5 @@ using System.Windows;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: Guid("5800C441-4944-4240-B497-888425DDFD4A")]
+

@@ -43,7 +43,7 @@
                         </StackPanel>
                     </Button>
                     <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Right"
-                                x:Name="TwitterButton" Click="TwitterButton_Click" >
+                                x:Name="LinkedinButton" Click="LinkedinButton_Click" >
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Linkedin" />
                             <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">LinkedIn</TextBlock>
