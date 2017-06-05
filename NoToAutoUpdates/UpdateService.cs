@@ -1,30 +1,32 @@
-﻿namespace NoToAutoUpdates
+﻿using System.Configuration;
+
+namespace NoToAutoUpdates
 {
     public class UpdateService
     {
         public void DisableUpdates()
         {
             var creator = new ProcessCreator();
-            var stopUpdateService = creator.CreateService("sc stop wuauserv");
+            var stopUpdateService = creator.CreateService(ConfigurationManager.AppSettings["StopUpdate"]);
             stopUpdateService.Start();
-            var disableUpdateService = creator.CreateService("sc config wuauserv start=disabled");
+            var disableUpdateService = creator.CreateService(ConfigurationManager.AppSettings["DisableUpdate"]);
             disableUpdateService.Start();
-            var stopOrchestratorService = creator.CreateService("sc stop UsoSvc");
+            var stopOrchestratorService = creator.CreateService(ConfigurationManager.AppSettings["StopOrchestrator"]);
             stopOrchestratorService.Start();
-            var disableOrchestratorService = creator.CreateService("sc config UsoSvc start=disabled");
+            var disableOrchestratorService = creator.CreateService(ConfigurationManager.AppSettings["DisableOrchestrator"]);
             disableOrchestratorService.Start();
         }
 
         public void EnableUpdates()
         {
             var creator = new ProcessCreator();
-            var enableUpdateService = creator.CreateService("sc config wuauserv start=demand");
+            var enableUpdateService = creator.CreateService(ConfigurationManager.AppSettings["EnableUpdate"]);
             enableUpdateService.Start();
-            var startUpdateService = creator.CreateService("sc start wuauserv");
+            var startUpdateService = creator.CreateService(ConfigurationManager.AppSettings["StartUpdate"]);
             startUpdateService.Start();
-            var enableOrchestratorService = creator.CreateService("sc config UsoSvc start=demand");
+            var enableOrchestratorService = creator.CreateService(ConfigurationManager.AppSettings["EnableOrchestrator"]);
             enableOrchestratorService.Start();
-            var startOrchestratorService = creator.CreateService("sc start UsoSvc");
+            var startOrchestratorService = creator.CreateService(ConfigurationManager.AppSettings["StartOrchestrator"]);
             startOrchestratorService.Start();
         }
     }
