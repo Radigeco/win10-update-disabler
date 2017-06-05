@@ -68,9 +68,8 @@
                     </Button>
                 </Grid>
             </Border>
-            <Button Content="Disable" Grid.Column="1" HorizontalAlignment="Left" Margin="23,134,0,0" Grid.Row="1" VerticalAlignment="Top" Width="85" Click="Button_Click_1"/>
-            <Button Content="Enable" Grid.Column="1" HorizontalAlignment="Left" Margin="144,134,0,0" Grid.Row="1" VerticalAlignment="Top" Width="85" Click="Button_Click"/>
+            <Button Content="Disable" x:Name="Disable" Grid.Column="1" HorizontalAlignment="Left" Margin="23,134,0,0" Grid.Row="1" VerticalAlignment="Top" Width="85" Click="Disable_Click" />
+            <Button Content="Enable" x:Name="Enable" Grid.Column="1" HorizontalAlignment="Left" Margin="144,134,0,0" Grid.Row="1" VerticalAlignment="Top" Width="85" Click="Enable_Click" />
         </Grid>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="643,215,-290,0" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>

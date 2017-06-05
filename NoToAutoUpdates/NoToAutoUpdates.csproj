@@ -60,6 +60,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ProcessCreator.cs" />
+    <Compile Include="UpdateService.cs" />
     <Page Include="UpdateController.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,16 +26,6 @@ namespace NoToAutoUpdates
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void GitHubButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -53,6 +44,18 @@ namespace NoToAutoUpdates
         private void EmailButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Disable_Click(object sender, RoutedEventArgs e)
+        {
+            var updateService = new UpdateService();
+            updateService.DisableUpdates();
+        }
+
+        private void Enable_Click(object sender, RoutedEventArgs e)
+        {
+            var updateService = new UpdateService();
+            updateService.EnableUpdates();
         }
     }
 }
