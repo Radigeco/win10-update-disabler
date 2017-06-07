@@ -2,7 +2,7 @@
 
 namespace UpdateControl
 {
-    public class ProcessCreator
+    public class CommandLineProcessCreator
     {
         public Process CreateService(string command)
         {
