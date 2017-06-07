@@ -10,26 +10,26 @@ namespace UpdateControl
         public void DisableUpdates()
         {
             var creator = new CommandLineProcessCreator();
-            var stopUpdateService = creator.CreateService(ConfigurationManager.AppSettings["StopUpdate"]);
+            var stopUpdateService = creator.CreateService(StaticConfigurationManager.GetValue("StopUpdate"));
             stopUpdateService.Start();
-            var disableUpdateService = creator.CreateService(ConfigurationManager.AppSettings["DisableUpdate"]);
+            var disableUpdateService = creator.CreateService(StaticConfigurationManager.GetValue("DisableUpdate"));
             disableUpdateService.Start();
-            var stopOrchestratorService = creator.CreateService(ConfigurationManager.AppSettings["StopOrchestrator"]);
+            var stopOrchestratorService = creator.CreateService(StaticConfigurationManager.GetValue("StopOrchestrator"));
             stopOrchestratorService.Start();
-            var disableOrchestratorService = creator.CreateService(ConfigurationManager.AppSettings["DisableOrchestrator"]);
+            var disableOrchestratorService = creator.CreateService(StaticConfigurationManager.GetValue("DisableOrchestrator"));
             disableOrchestratorService.Start();
         }
 
         public void EnableUpdates()
         {
             var creator = new CommandLineProcessCreator();
-            var enableUpdateService = creator.CreateService(ConfigurationManager.AppSettings["EnableUpdate"]);
+            var enableUpdateService = creator.CreateService(StaticConfigurationManager.GetValue("EnableUpdate"));
             enableUpdateService.Start();
-            var startUpdateService = creator.CreateService(ConfigurationManager.AppSettings["StartUpdate"]);
+            var startUpdateService = creator.CreateService(StaticConfigurationManager.GetValue("StartUpdate"));
             startUpdateService.Start();
-            var enableOrchestratorService = creator.CreateService(ConfigurationManager.AppSettings["EnableOrchestrator"]);
+            var enableOrchestratorService = creator.CreateService(StaticConfigurationManager.GetValue("EnableOrchestrator"));
             enableOrchestratorService.Start();
-            var startOrchestratorService = creator.CreateService(ConfigurationManager.AppSettings["StartOrchestrator"]);
+            var startOrchestratorService = creator.CreateService(StaticConfigurationManager.GetValue("StartOrchestrator"));
             startOrchestratorService.Start();
         }
 

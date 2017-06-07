@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Configuration;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Media;
@@ -21,7 +20,7 @@ namespace UpdateControl
         public void UpdateServiceStateLabel()
         {
             var updateService = new UpdateService();
-            var serviceState = updateService.GetServiceState(ConfigurationManager.AppSettings["UpdateServiceName"]);
+            var serviceState = updateService.GetServiceState(StaticConfigurationManager.GetValue("UpdateServiceName"));
             ServiceStatusLabel.Text = Enum.GetName(typeof(UpdateService.StartupState), serviceState);
             if (serviceState == UpdateService.StartupState.Disabled)
             {
@@ -37,12 +36,12 @@ namespace UpdateControl
 
         private void GitHubButton_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start(ConfigurationManager.AppSettings["GithubPage"]);
+            Process.Start(StaticConfigurationManager.GetValue("GithubPage"));
         }
 
         private void LinkedinButton_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start(ConfigurationManager.AppSettings["LinkedinProfilePage"]);
+            Process.Start(StaticConfigurationManager.GetValue("LinkedinProfilePage"));
         }
 
         private void Disable_Click(object sender, RoutedEventArgs e)
