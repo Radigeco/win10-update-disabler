@@ -1,7 +1,9 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Configuration;
+using System.Diagnostics;
 using System.Windows;
+using System.Windows.Media;
 using MaterialDesignThemes.Wpf;
-using NoToAutoUpdates;
 
 namespace UpdateControl
 {
@@ -13,54 +15,56 @@ namespace UpdateControl
         public UpdateController()
         {
             InitializeComponent();
+            UpdateServiceStateLabel();
+        }
+
+        public void UpdateServiceStateLabel()
+        {
+            var updateService = new UpdateService();
+            var serviceState = updateService.GetServiceState(ConfigurationManager.AppSettings["UpdateServiceName"]);
+            ServiceStatusLabel.Text = Enum.GetName(typeof(UpdateService.StartupState), serviceState);
+            if (serviceState == UpdateService.StartupState.Disabled)
+            {
+                ServiceStatusIcon.Kind = PackIconKind.Alert;
+                ServiceStatusIcon.Foreground = ConvertFromHexToBrush("#AD1457");
+            }
+            else
+            {
+                ServiceStatusIcon.Kind = PackIconKind.CheckboxMarkedCircle;
+                ServiceStatusIcon.Foreground = ConvertFromHexToBrush("#00BCD4");
+            }
         }
 
         private void GitHubButton_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("https://github.com/Radigeco");
-        }
-
-        private void ChatButton_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("https://twitter.com/radigeco");
-        }
-
-        private void EmailButton_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("mailto://radigeco@gmail.com");
+            Process.Start(ConfigurationManager.AppSettings["GithubPage"]);
         }
 
         private void LinkedinButton_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("https://www.linkedin.com/in/attila-g%C3%A1l-5b6b86b0/");
+            Process.Start(ConfigurationManager.AppSettings["LinkedinProfilePage"]);
         }
 
         private void Disable_Click(object sender, RoutedEventArgs e)
         {
             var updateService = new UpdateService();
             updateService.DisableUpdates();
-            CreatePopup("Done!");
-
+            UpdateServiceStateLabel();
         }
 
         private void Enable_Click(object sender, RoutedEventArgs e)
         {
             var updateService = new UpdateService();
             updateService.EnableUpdates();
-            CreatePopup("Done!");
+            UpdateServiceStateLabel();
         }
 
-
-        private void CreatePopup(string message)
+        public SolidColorBrush ConvertFromHexToBrush(string hexCode)
         {
-            var messageDialog = new MessageDialog
-            {
-                Message = { Text = message }
-            };
-
-            DialogHost.Show(messageDialog);
+            return (SolidColorBrush)new BrushConverter().ConvertFromString(hexCode);
         }
 
- 
     }
+
+
 }

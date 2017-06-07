@@ -31,22 +31,22 @@
             <Image Source="Resources/updater.png" Grid.RowSpan="5" StretchDirection="Both" VerticalAlignment="Stretch" Stretch="UniformToFill" />
             <TextBlock Grid.Column="1" Style="{StaticResource MaterialDesignHeadlineTextBlock}" Margin="16 16 16 2">Control your PC</TextBlock>
             <TextBlock Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Margin="16 0 16 8" Foreground="{DynamicResource MaterialDesignBodyLight}"
-                           VerticalAlignment="Center">This tool helps you disable the nasty auto-updates build into Windows 10. To disable, just click the "Disable" button, if it does not work, run the application as administrator.</TextBlock>
+                           VerticalAlignment="Center">This tool helps you disable the nasty auto-updates built into Windows 10. To disable it, just click the "Disable" button, if it does not work, run the application as administrator.</TextBlock>
 
             <Border Grid.Column="1" Grid.Row="2" BorderThickness="0 1 0 0" BorderBrush="{DynamicResource MaterialDesignDivider}" Margin="0 8 0 0">
                 <Grid Margin="8">
                     <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Left"
-                                x:Name="GitHubButton" Click="GitHubButton_Click" >
+                                x:Name="Status" >
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="GithubCircle" />
-                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">GitHub</TextBlock>
+                            <!--<materialDesign:PackIcon Kind="Information" />-->
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Service status:</TextBlock>
                         </StackPanel>
                     </Button>
                     <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Right"
-                                x:Name="LinkedinButton" Click="LinkedinButton_Click" >
+                                x:Name="LinkedinButtonz" >
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Linkedin" />
-                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">LinkedIn</TextBlock>
+                            <materialDesign:PackIcon Kind="CheckboxMarkedCircle" x:Name="ServiceStatusIcon" Foreground="#00BCD4"/>
+                            <TextBlock x:Name="ServiceStatusLabel" Margin="8 0 0 0" VerticalAlignment="Center">Running</TextBlock>
                         </StackPanel>
                     </Button>
                 </Grid>
@@ -54,17 +54,17 @@
             <Border Grid.Column="1" Grid.Row="3" BorderThickness="0 1 0 0" BorderBrush="{DynamicResource MaterialDesignDivider}">
                 <Grid Margin="8">
                     <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Left"
-                                x:Name="ChatButton" VerticalAlignment="Bottom" Click="ChatButton_Click" >
+                            x:Name="GitHubButton" Click="GitHubButton_Click" >
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Message" />
-                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Chat</TextBlock>
+                            <materialDesign:PackIcon Kind="GithubCircle" />
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">GitHub</TextBlock>
                         </StackPanel>
                     </Button>
                     <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Right"
-                                x:Name="EmailButton" Margin="0,0,1,0" Click="EmailButton_Click" >
+                            x:Name="LinkedinButton" Click="LinkedinButton_Click" >
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Email" />
-                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Email</TextBlock>
+                            <materialDesign:PackIcon Kind="Linkedin" />
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">LinkedIn</TextBlock>
                         </StackPanel>
                     </Button>
                 </Grid>
