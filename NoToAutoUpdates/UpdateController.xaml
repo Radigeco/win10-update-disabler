@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="Update Control" Height="362.448" Width="464.225"
+        Title="Update Control by Attila Gál" Height="362.448" Width="464.225"
         ResizeMode="NoResize">
     <Grid>
 
