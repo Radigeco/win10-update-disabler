@@ -19,10 +19,10 @@ namespace UpdateControl
 
         public void UpdateServiceStateLabel()
         {
-            var updateService = new UpdateService();
+            var updateService = new CommandLineUpdateService();
             var serviceState = updateService.GetServiceState(StaticConfigurationManager.GetValue("UpdateServiceName"));
-            ServiceStatusLabel.Text = Enum.GetName(typeof(UpdateService.StartupState), serviceState);
-            if (serviceState == UpdateService.StartupState.Disabled)
+            ServiceStatusLabel.Text = Enum.GetName(typeof(CommandLineUpdateService.StartupState), serviceState);
+            if (serviceState == CommandLineUpdateService.StartupState.Disabled)
             {
                 ServiceStatusIcon.Kind = PackIconKind.Alert;
                 ServiceStatusIcon.Foreground = ConvertFromHexToBrush("#AD1457");
@@ -46,14 +46,14 @@ namespace UpdateControl
 
         private void Disable_Click(object sender, RoutedEventArgs e)
         {
-            var updateService = new UpdateService();
+            var updateService = new CommandLineUpdateService();
             updateService.DisableUpdates();
             UpdateServiceStateLabel();
         }
 
         private void Enable_Click(object sender, RoutedEventArgs e)
         {
-            var updateService = new UpdateService();
+            var updateService = new CommandLineUpdateService();
             updateService.EnableUpdates();
             UpdateServiceStateLabel();
         }

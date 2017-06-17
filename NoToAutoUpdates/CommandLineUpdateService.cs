@@ -4,7 +4,7 @@ using System.Security;
 
 namespace UpdateControl
 {
-    public class UpdateService
+    public class CommandLineUpdateService
     {
         public void DisableUpdates()
         {
