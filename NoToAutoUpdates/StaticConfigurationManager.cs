@@ -23,6 +23,8 @@ namespace UpdateControl
                 {"UpdateServiceName","wuauserv" },
                 {"LinkedinProfilePage","https://www.linkedin.com/in/attila-g%C3%A1l-5b6b86b0/" },
                 {"GithubPage","https://github.com/Radigeco" },
+                {"EnableTrustedInstaller","sc config TrustedInstaller start=demand"},
+                {"AutomaticTrustedInstaller","sc config TrustedInstaller start=delayed-auto "}
             };
         }
 

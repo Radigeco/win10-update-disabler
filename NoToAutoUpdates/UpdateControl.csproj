@@ -55,10 +55,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>335753755206B24013199A4D647719524C82662A</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>291DBDB064BB628707390BB21FE4281B606494E4</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>NoToAutoUpdates_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>UpdateControl_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -142,13 +142,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="NoToAutoUpdates_TemporaryKey.pfx" />
+    <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="UpdateControl_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="resources\updater.png" />

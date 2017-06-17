@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Configuration;
 using System.Management;
 using System.Security;
 
@@ -18,6 +17,8 @@ namespace UpdateControl
             stopOrchestratorService.Start();
             var disableOrchestratorService = creator.CreateService(StaticConfigurationManager.GetValue("DisableOrchestrator"));
             disableOrchestratorService.Start();
+            var setManualTrustedInstaller = creator.CreateService(StaticConfigurationManager.GetValue("EnableTrustedInstaller"));
+            setManualTrustedInstaller.Start();
         }
 
         public void EnableUpdates()
